@@ -49,8 +49,8 @@ mvn_traits <- function(Genus="Rhabdosargus",Species="globiceps",Loo = NULL,K=NUL
   
   pars= c(priors)
   priors = priors[c(1:6)]
-  
-  mcparms = data.frame(rmvnorm(nmc,mean =  mu,sigma = covs,  method=c("eigen")))
+  mvn = mvtnorm::rmvnorm(nmc,mean =  mu,sigma = covs,  method=c("eigen"))
+  mcparms = data.frame(mvn)
   
   nprior = 1
   prd = NULL
