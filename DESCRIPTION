@@ -1,0 +1,22 @@
+Package: SPMprior
+Title: SPM prior generation with FishLife
+Version: 1.0.4
+Authors@R: 
+    c(person(given = "Henning",
+           family = "Winker",
+           role = c("aut","cre"),
+           email = "henning.winker@ec.europa.eu")
+           )
+Maintainer: Henning Winker <Henning.Winker@gmail.com>
+Description: Derives generic Pella-Tomlinson SPM prior from FishLife using Age-Structured Equilibrium Models
+Depends:
+    R (>= 3.5)
+Imports:
+      mvtnorm
+Remotes:
+    james-thorson/utilities,
+    james-thorson/FishLife
+License: EUPL
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
