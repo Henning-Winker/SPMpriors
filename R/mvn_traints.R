@@ -27,7 +27,7 @@ mvn_traits <- function(Genus="Rhabdosargus",Species="globiceps",Loo = NULL,K=NUL
     savepng = TRUE
   } 
   # Search Taxa
-  taxa = Search_species(Genus=Genus,Species = Species,add_ancestors=TRUE)$match_taxonomy
+  taxa = FishLife::Search_species(Genus=Genus,Species = Species,add_ancestors=TRUE)$match_taxonomy
   tax = strsplit(taxa[[1]], "_")
   # Predict LifeLife Traits  
   
@@ -35,7 +35,7 @@ mvn_traits <- function(Genus="Rhabdosargus",Species="globiceps",Loo = NULL,K=NUL
   png(file = paste0(PlotPath,"/",Genus,".",Species,".fl_ellipse.png"), width = 7, height = 8, 
       res = 200, units = "in")
   }
-  predfl =Plot_taxa(taxa,mfrow=c(3,2))
+  predfl =FishLife::Plot_taxa(taxa,mfrow=c(3,2))
   if(savepng) dev.off()
   
   mu= predfl[[1]]$Mean_pred
