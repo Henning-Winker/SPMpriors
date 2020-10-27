@@ -21,23 +21,17 @@ Installing SPMpriors requires the `library(devtools)` and `library(FishLife)` pr
 
 
 ## Example 
-Get Flounder traits
+Get Flounder traits tuned  to North Sea Loo and Lm 
 
-`stk = mvn_traits(Genus="Platichthys",Species="flesus",h=c(0.6,0.9),Plot=T)`
-
-check
-
-`stk$traits`
-
-Tune to North Sea Loo and Lm 
-
-`stkLinfK = mvn_traits(Genus="Platichthys",Species="flesus",Loo=c(41,0.1),Lm=c(21,0.1),h=c(0.6,0.9),Plot=T)`
+`stk = mvn_traits(Genus="Platichthys",Species="flesus",Loo=c(41,0.1),Lm=c(21,0.1),h=c(0.6,0.9),Plot=T)`
 
 <img src="https://github.com/Henning-Winker/JARA/blob/master/JARAplotting/trj2x1.png" width = "800" >
 
 <br/>
 
 <img src="https://github.com/Henning-Winker/JARA/blob/master/JARAplotting/trj2x1.png" width = "800" >
+
+
 
 
 Note: Leslie r should be only used in a Schaefer model 
