@@ -39,7 +39,7 @@ stk = flmvn_traits(Genus="Lophius",Species="piscatorius",tmax=c(20,0.2),h=c(0.6,
 fl2asem(stk,mc=1000,plot.progress = T)
 
 # what if Lc < Lm
-fl2asem(stk,mc=1000,Lc=30,plot.progress = T)
+fl2asem(stk,mc=1000,Lc=30)
 
 
 

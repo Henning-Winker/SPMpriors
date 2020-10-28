@@ -34,9 +34,25 @@ Get Flounder traits tuned  to North Sea Loo and Lm
 
 
 
-Note that Leslie-matrix r prior from FishLife should only be used in a Schaefer model. To approximate Pella-Tomlison priors for r and shape an  
+Note that Leslie-matrix r prior from FishLife should can be used Schaefer SPM, but should not be applied in a Pella-Tomlison formaltion where the shape parameter differs from n = 2. 
 
-Age-Structure Equilibrium Model (asem) approach is recommended (Winker et al. 2019, 2020).
+For a Pella-Tomlison model it is more appropriate to approximate r and shape from an Age-Structured Equilibrium Model (Winker et al. 2020) The default assumption is that length at first capture = Lm:
+
+`fl2asem(stk,mc=1000,plot.progress = T)`
+
+Another example could be White Angler Fish
+
+`stk = flmvn_traits(Genus="Lophius",Species="piscatorius",tmax=c(20,0.2),h=c(0.6,0.9),Plot=T,savepng = F)`
+
+First assume Lc = Lm
+
+`fl2asem(stk,mc=1000,plot.progress = T)`
+
+..but what happens if Lc < Lm?
+
+`fl2asem(stk,mc=1000,Lc=30)`
+
+more plotting functions coming soon....
 
 
 
