@@ -1,4 +1,4 @@
-#' mvn_traits()
+#' flmvn_traits()
 #'
 #' Generate stock parameters with tuning from FishLife (Thorson et al. 2000) using MVN
 #'
@@ -19,7 +19,7 @@
 #' @export
 #' @author Henning Winker (JRC-EC)
 
-mvn_traits <- function(Genus="Rhabdosargus",Species="globiceps",Loo = NULL,K=NULL,tmax=NULL,tm=NULL,M=NULL,Lm=NULL,h=NULL,nmc = 2*10^5,upper.quant=0.9,Plot=TRUE,savepng=FALSE,PlotPath=getwd()){
+flmvn_traits <- function(Genus="Rhabdosargus",Species="globiceps",Loo = NULL,K=NULL,tmax=NULL,tm=NULL,M=NULL,Lm=NULL,h=NULL,nmc = 2*10^5,upper.quant=0.9,Plot=TRUE,savepng=FALSE,PlotPath=getwd()){
   parms=c("Loo","K","Lm","tm","tmax","M","logitbound_h","ln_margsd","rho","ln_r","ln_G")
   
   if(!Plot){
@@ -151,7 +151,8 @@ mvn_traits <- function(Genus="Rhabdosargus",Species="globiceps",Loo = NULL,K=NUL
   parname = names(trait.upd)
   parname[c(7,8,10,11)] = c("h","sigR","r","G") 
   colnames(trait.upd) = parname
-  return(list(traits=out,vcm=updfl,mvnsim = trait.upd))
+  rownames(out) <- 1:nrow(out)
+  return(list(traits=out,vcm=updfl,mvnstk = trait.upd))
   
 } # End of function 
 
