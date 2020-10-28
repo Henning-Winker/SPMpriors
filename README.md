@@ -23,7 +23,7 @@ Installing SPMpriors requires the `library(devtools)` and `library(FishLife)` pr
 ## Example 
 Get Flounder traits tuned  to North Sea Loo and Lm 
 
-`stk = mvn_traits(Genus="Platichthys",Species="flesus",Loo=c(41,0.1),Lm=c(21,0.1),h=c(0.6,0.9),Plot=T)`
+`stk = flmvn_traits(Genus="Platichthys",Species="flesus",Loo=c(41,0.1),Lm=c(21,0.1),h=c(0.6,0.9),Plot=T)`
 
 <img src="https://github.com/Henning-Winker/SPMpriors/blob/main/Example/Platichthys.flesus.fl_ellipse.png" width = "800" >
 
@@ -34,10 +34,12 @@ Get Flounder traits tuned  to North Sea Loo and Lm
 
 
 
-Note: Leslie r should be only used in a Schaefer model 
+Note that Leslie-matrix r prior from FishLife should only be used in a Schaefer model. To approximate Pella-Tomlison priors for r and shape an  
 
-Age-Structure Equilibrium Model will follow for Pella-Tomlinson estimates
+Age-Structure Equilibrium Model (asem) approach is recommended (Winker et al. 2019, 2020).
 
-`aspm_priors(stkLinfK$mvnsim,Lc)` ...coming soon
+
+
+`fl2asem(stk,Lc=20)` ...coming soon
 
 

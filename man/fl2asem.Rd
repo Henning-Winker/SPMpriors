@@ -21,6 +21,8 @@ fl2asem(
 )
 }
 \arguments{
+\item{mc}{number of Monte-Carlo replicates extraced from MVN draws}
+
 \item{t0}{theoretical age a length zero (default -0.5)}
 
 \item{aW}{parameter of the lenght-weight relation (default 0.01)}

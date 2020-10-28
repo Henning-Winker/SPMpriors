@@ -35,7 +35,7 @@ asem <- function(Loo,K,t0=-0.5,aW=0.01,bW=3.04,Lm,dLm=NULL,tmin=0,tmax,h,M,Lc=NU
   Lhalf = Loo*(1-exp(-K*(age+0.5-t0)))
   # Weight-at-age
   W = aW*L^bW 
-  Whalf = W_a*Lhalf^W_b 
+  Whalf = aW*Lhalf^bW 
   
   # Maturity-at-age
   if(is.null(dLm)) dLm = 0.1*Lm
@@ -43,8 +43,8 @@ asem <- function(Loo,K,t0=-0.5,aW=0.01,bW=3.04,Lm,dLm=NULL,tmin=0,tmax,h,M,Lc=NU
   
   #Selectivity-at-age (logistic)
   if(is.null(Lc)) Lc = Lm 
-  if(is.null(dS)) dS = 0.1*Lc
-  sel = 1/(1+exp(-(L-Lc)/dS))
+  if(is.null(dLc)) dLc = 0.1*Lc
+  sel = 1/(1+exp(-(L-Lc)/dLc))
   
   
   # compute unFvecshed Spawning biomass per recruit (SBR0)
