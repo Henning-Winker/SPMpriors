@@ -5,22 +5,23 @@
 \title{fl2asem()}
 \usage{
 fl2asem(
-  mvnstk,
+  flstk = flstk,
   mc = 1000,
   t0 = -0.5,
   aW = 0.01,
   bW = 3.04,
   dLm = NULL,
   tmin = 0,
-  tmax,
   Lc = NULL,
   dLc = NULL,
   Fvec = NULL,
   R0 = 1,
-  Plot = FALSE
+  plot.progress = FALSE
 )
 }
 \arguments{
+\item{flstk}{output object from flmvn_traits()}
+
 \item{mc}{number of Monte-Carlo replicates extraced from MVN draws}
 
 \item{t0}{theoretical age a length zero (default -0.5)}
@@ -40,8 +41,6 @@ fl2asem(
 \item{Fvec}{vector of instantanious fishing fortality}
 
 \item{R0}{unfished recruitment default = 1}
-
-\item{flstk}{output object from flmvn_traits()}
 
 \item{plot.progress}{plot simulated production function}
 }

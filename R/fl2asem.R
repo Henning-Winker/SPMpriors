@@ -19,11 +19,11 @@
 #' @export
 #' @author Henning Winker (JRC-EC)
 
- 
-fl2asem <- function(flstk,mc=1000,t0=-0.5,aW=0.01,bW=3.04,dLm=NULL,tmin=0,Lc=NULL,dLc=NULL,Fvec=NULL,R0=1,plot.progress=FALSE){
+ fl2asem <- function(flstk=flstk,mc=1000,t0=-0.5,aW=0.01,bW=3.04,dLm=NULL,tmin=0,Lc=NULL,dLc=NULL,Fvec=NULL,R0=1,plot.progress=FALSE){
   mvnstk = flstk$mvnstk
   steps = floor(nrow(mvnstk)/mc)
-  thinning = seq(1,1000*steps,steps)
+  endstep = (mc-1)*steps
+  thinning = seq(from=1,to=endstep,by=steps)
   mvnstk = mvnstk[thinning,]
   if(is.null(Fvec)) Fvec = c(0,exp(seq(-5,1.5,0.005)))
   
