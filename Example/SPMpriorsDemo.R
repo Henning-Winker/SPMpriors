@@ -32,7 +32,7 @@ stk$traits
 # The default assumption is that length at first capture = Lm
 fl2asem(stk,mc=1000,plot.progress = T)
 
-# White Angler Fish
+#><> White Angler Fish
 stk = flmvn_traits(Genus="Lophius",Species="piscatorius",tmax=c(20,0.2),h=c(0.6,0.9),Plot=T,savepng = F)
 
 # assume Lc = Lm
